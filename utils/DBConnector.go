@@ -8,11 +8,11 @@ import (
 
 //This is going to be the file that main calls to launch up the SQL connection
 
-var user = "root"
-var password = "password"
+var user = "ec2-user"
+var password = ""
 var host = "localhost"
 var port = "3306"
-var database = "golang"
+var database = "messenger"
 
 func Connect() (*sql.DB, error) {
 	//print to console that we are connecting to the database
