@@ -1,51 +1,51 @@
 package models
 
 type User struct {
-	id       int
-	name     string
-	email    string
-	password string
+	ID       int
+	Name     string
+	Email    string
+	Password string
 }
 
-func NewUser(id int, name string, email string, password string) *User {
-	return &User{id: id, name: name, email: email, password: password}
+func NewUser(ID int, name string, email string, password string) *User {
+	return &User{ID: ID, Name: name, Email: email, Password: password}
 }
 
-func GetUser(id int) *User {
+func GetUser(ID int) *User {
 	// TODO: Get user from database
 	return nil
 }
 
-func (u *User) GetId() int {
-	return u.id
+func (u *User) GetID() int {
+	return u.ID
 }
 
 func (u *User) GetName() string {
-	return u.name
+	return u.Name
 }
 
 func (u *User) GetEmail() string {
-	return u.email
+	return u.Email
 }
 
 func (u *User) GetPassword() string {
-	return u.password
+	return u.Password
 }
 
-func (u *User) SetId(id int) {
-	u.id = id
+func (u *User) SetId(ID int) {
+	u.ID = ID
 }
 
 func (u *User) SetName(name string) {
-	u.name = name
+	u.Name = name
 }
 
 func (u *User) SetEmail(email string) {
-	u.email = email
+	u.Email = email
 }
 
 func (u *User) SetPassword(password string) {
-	u.password = password
+	u.Password = password
 }
 
 // TODO: Implement save() function to save user to database

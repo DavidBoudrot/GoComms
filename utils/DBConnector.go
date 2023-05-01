@@ -2,6 +2,7 @@ package utils
 
 import (
 	"database/sql"
+	_ "github.com/go-sql-driver/mysql"
 	"log"
 )
 
@@ -14,11 +15,12 @@ var port = "3306"
 var database = "golang"
 
 func Connect() (*sql.DB, error) {
+	//print to console that we are connecting to the database
+	log.Println("Connecting to database...")
 	db, err := sql.Open("mysql", user+":"+password+"@tcp("+host+":"+port+")/"+database)
 	if err != nil {
-		return nil, err
+		log.Println("Error connecting to database:", err)
 	}
-
 	// Use a deferred function to ensure that the database connection is closed
 	// before the function returns.
 	defer func() {
@@ -27,7 +29,6 @@ func Connect() (*sql.DB, error) {
 			log.Println("Error closing database connection:", err)
 		}
 	}()
-
 	// Perform a ping to verify that the database connection is valid.
 	err = db.Ping()
 	if err != nil {

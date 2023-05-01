@@ -8,6 +8,7 @@ import (
 )
 
 var HTMLport = "8080"
+var HTMLhost = ""
 
 func HTTPStartup() {
 	// This will be the main function that will start up the HTTP server
@@ -15,6 +16,10 @@ func HTTPStartup() {
 	// that will handle the HTTP requests
 	log.Println("Starting HTTP server on port", HTMLport)
 	http.HandleFunc("/", makeHandler(indexHandler))
+	err := http.ListenAndServe(HTMLhost+":"+HTMLport, nil)
+	if err != nil {
+		log.Fatal("Error starting HTTP server:", err)
+	}
 
 }
 

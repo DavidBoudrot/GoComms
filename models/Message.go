@@ -1,44 +1,44 @@
 package models
 
 type Message struct {
-	id         int
-	senderId   int
-	receiverId int
-	message    string
+	ID         int
+	SenderID   int
+	ReceiverID int
+	Message    string
 }
 
-func CreateMessage(id int, senderId int, receiverId int, message string) *Message {
-	return &Message{id: id, senderId: senderId, receiverId: receiverId, message: message}
+func CreateMessage(ID int, senderID int, receiverID int, message string) *Message {
+	return &Message{ID: ID, SenderID: senderID, ReceiverID: receiverID, Message: message}
 }
 
 func (m *Message) GetId() int {
-	return m.id
+	return m.ID
 }
 
 func (m *Message) GetSenderId() int {
-	return m.senderId
+	return m.SenderID
 }
 
 func (m *Message) GetReceiverId() int {
-	return m.receiverId
+	return m.ReceiverID
 }
 
 func (m *Message) GetMessage() string {
-	return m.message
+	return m.Message
 }
 
-func (m *Message) SetId(id int) {
-	m.id = id
+func (m *Message) SetId(ID int) {
+	m.ID = ID
 }
 
-func (m *Message) SetSenderId(senderId int) {
-	m.senderId = senderId
+func (m *Message) SetSenderId(senderID int) {
+	m.SenderID = senderID
 }
 
-func (m *Message) SetReceiverId(receiverId int) {
-	m.receiverId = receiverId
+func (m *Message) SetReceiverId(receiverID int) {
+	m.ReceiverID = receiverID
 }
 
 func (m *Message) SetMessage(message string) {
-	m.message = message
+	m.Message = message
 }
